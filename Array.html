@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array</title>
+</head>
+<body>
+	<script>
+		/*let arr = new Array(1,2,3,4,5,6);
+		let arr1 =['a','b','c']
+		arr.push('x','y','z');
+		console.dir(arr);
+		arr.push(...arr1);
+		console.log(arr);
+		arr.unshift('nihao');
+		console.log(arr);
+		arr.pop();
+		console.log(arr);
+		arr.shift();
+		console.log(arr);
+		arr.splice(3,2,'nihao','heoll');
+		console.log(arr);*/
+		//去重
+		let arr=[1,2,3,4,5,1,2,3];
+		function qu(arr){
+			let newarr=[];
+			for(let i=0;i<arr.length;i++){
+				if (newarr.includes(arr[i])!=true){
+					newarr[newarr.length]=arr[i];
+				}
+			}
+			return newarr;
+		}
+		console.log(qu(arr));
+		//第二种 
+		function deRepeat(arr){
+			let newarr=[];
+			for(let i=0;i<arr.length;i++){
+				let flag=true;
+				for(let j=i+1;j<arr.length;j++){
+					if(arr[i]==arr[j]){
+						flag=false;
+						break;
+					}
+				}
+				if (flag){
+					newarr.push(arr[i]);
+				}
+			}
+			return newarr;
+		}
+		console.log(deRepeat(arr));
+
+
+		//第二种
+		/*function qu1(arr){
+			let newarr=[];
+			for(let i=0;i<arr.length;i++){
+				for (let j=i+1;j<arr.length-1;j++){
+					if(arr[i]=arr[j]){
+						arr.splice(i,1);	
+						newarr=arr;
+					}	
+				}return newarr;
+			}
+
+		}
+		console.log(qu1(arr));*/
+
+		// 
+		Array.prototype.deRepeat=function(){
+			let newarr=[];
+			for(let i=0;i<this.length;i++){
+				let flag=true;
+				for(let j=i+1;j<this.length;j++){
+					if(this[i]==this[j]){
+						flag=false;
+						break;
+					}
+				}
+				if (flag){
+					newarr.push(this[i]);
+				}
+			}
+			return newarr;
+		}
+		
+		let newarr= new Array(4,2,1,3,2,1,5,6,4);
+		let str =newarr.deRepeat();
+		console.log(str);
+	</script>
+</body>
+</html>
