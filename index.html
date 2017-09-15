@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype</title>
+</head>
+<body>
+	<script>
+	function Person(){
+		/*this.sleep=function(){
+			alert('person的构造函数');
+		}*/
+	}
+	function Student(){
+		/*this.sleep=function(){
+			alert('student的构造函数');
+		}*/
+	}
+	Student.prototype={
+		sleep:function(){
+
+			alert('student的原型');
+		}
+	}
+	Person.prototype={
+		sleep:function(){
+			alert('person的原型');
+		}
+	}
+	
+	Student.prototype = new Person();
+	let lisi = new Student();
+	let zhangsan = new Person();
+	// console.log(zhangsan);
+	zhangsan.sleep();
+	// zhangsan.play();
+	// console.log(zhangsan instanceof Person);
+	// let arr=[];
+	// console.log(arr instanceof Array);
+	// console.log(lisi);
+	lisi.sleep();
+	console.log(Object.__proto__);
+	</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		Object   string  Number  Boolean   Array   Date  RegExp
+		浏览器对象模型  ：bom浏览器对象  dom;
+		 */
+		 //字符串
+		/* let str ='abcd';
+		 console.log(str.constructor);
+		 console.log(str.charAt(2));
+		 let str1='abcdefgh';
+		 console.log(str1.slice(0,4));
+		 console.log(str1.slice(0,-1));*/
+		/* let  Str ="abcdcdadabcdcdcdadacab";
+		 function replaceAll(str,rStr){
+		 	let star ="*".repeat(rStr.length); 
+		 	while(str.includes(rStr)){
+		 		
+		 		str	= str.replace(rStr,star);
+		 	}
+		 	return str;
+		 }
+		 console.log(replaceAll(Str,'ad'));*/
+		 let  Str ="abcdcdadabcdcdcdadacab";
+		 function replaceAll(str,rStr){
+		 	/*let star='';
+		 	for(let i=0;i<rStr.length;i++){	
+		 		star+="*";
+		 	}*/
+		 	let star ="*".repeat(rStr.length);  //重复“*”；
+		 	while(str.indexOf(rStr) !=-1){	
+		 		str	= str.replace(rStr,star);
+		 	}
+		 	return str;
+		 }
+		 console.log(replaceAll(Str,'dada'));
+		 let url ='https://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.com';
+		 function replaceJ(str,rStr){
+		 	let star ="*".repeat(rStr.length);
+		 	let result=[];
+		 	while(str.includes(rStr)){
+		 		result[result.length]=str.indexOf(rStr);
+		 		str = str.replace(rStr,star);
+		 	}	
+		 	return result;
+		 }
+		 console.log(replaceJ(url,'baidu'));
+
+		 function replaceJ2(str,rStr){	
+		 	let index=[];
+		 	for (let i=0;i<=str.length;i++){
+		 		if(str.slice(i,i+rStr.length)==rStr){
+		 			index[index.length]=i;
+		 		}
+		 	}
+		 	return index;
+		 }
+		 console.log(replaceJ2(url,'baidu'));
+		 
+	</script>
+</body>
+</html>
