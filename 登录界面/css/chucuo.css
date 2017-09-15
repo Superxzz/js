@@ -1,0 +1,39 @@
+/*
+* @Author: Machenike
+* @Date:   2017-09-15 17:08:44
+* @Last Modified by:   Machenike
+* @Last Modified time: 2017-09-15 17:50:42
+*/
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	list-style: none;
+	font-family:"sans-serif";
+}
+html,body{
+	background: rgba(0, 0, 0, 0.5);
+}
+main{
+	width: 350px;
+	height: 250px;
+	background: #fff;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+	border-radius: 4px;
+}
+main h3{
+	font-size: 20px;
+	line-height: 50px;
+}
+main div span{
+	font-size: 18px;
+	color: red;
+	margin: 0 5px;
+	font-weight: bold;
+}
