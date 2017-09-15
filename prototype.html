@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	function Person(name,age,sex){
+		this.name = name;
+		this.age = age ;
+		this.sex = sex ;
+		this[1]='a';
+		study(){
+			alert('学习');
+		}
+	}
+	let zhangsan =new Person('zhangsan',18,'nan');
+	console.log(zhangsan.name);
+
+</script>

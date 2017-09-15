@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>myArray</title>
+</head>
+<body>
+	<script>
+		let arr = new myArray('a','b','c','d',1,2,3,4,5);
+		function myArray(){
+			for(let i=0;i<arguments.length;i++){
+				this[i]=arguments[i];
+			}
+			this.length = arguments.length;
+			// 加元素
+			this.Push=function(value){
+
+				for(let i=0;i<arguments.length;i++){
+					this[this.length]=arguments[i];
+					this.length++;
+				}
+				return this;
+			}
+			//找出该元素在数组中第一次出现的位置；
+			this.indexOf=function(value){
+				for(let i=0;i<this.length;i++){
+					if(value==this[i]){
+						return i+1;
+					}
+				}
+				return -1;
+			}
+			//找出该元素在数组中最后一次出现的位置；
+			this.lastindexof= function(value){
+				for(let i=this.length-1;i>=0;i--){
+					if(value==this[i]){
+						return i+1;
+					}
+				}
+				return -1;
+			}
+			// 看这个数组是否包含这个元素
+			this.includes=function(value){
+				for(let i=0; i<this.length;i++){
+					if(value==this[i]){
+						return true;
+					}
+				}
+				return false;
+			}
+			this.some=function(value){
+				for(let i=0;i<this.length;i++){
+					if(value==this[i]){
+					return true;
+					}
+				}
+				return false;
+			}
+			//将数组中的元素调换；
+			this.reverse=function(){
+				let	newarr=new myArray();
+				for(let i=this.length-1;i>=0;i--){
+					newarr.Push(this[i]);
+				}
+				return newarr;
+			}	 
+			//在任意位置进行删除任意个数
+			this.splicedelete=function(pos,num){
+				let newarr = new myArray();
+				for(var i=0;i<this.length;i++){
+				if(i>=pos && i<pos+num){
+					continue;
+				}
+				newarr.Push(this[i]);
+				}return newarr;
+			}
+			//对数组进行升序排列
+			this.sortUp=function(){
+				for(let i=0;i<this.length;i++){
+					for(j=i+1;j<=this.length;j++){
+						if(this[i]>this[j]){
+							u=this[i];
+							this[i]=this[j];
+							this[j]=u;
+						}
+					}
+
+				}	
+				return this; 
+			}
+			// map 映射；
+			this.map = function(fn){
+				let newarr =new myArray();
+				for(let i= 0;i<this.length;i++){
+					newarr.Push(fn(this[i]));
+				}
+				return newarr;
+			}
+
+		}
+		console.log(arr);
+		let a=arr.indexOf('a');
+		let b=arr.Push('a');
+		let c=arr.lastindexof(1);
+		let d=arr.includes(2);
+		let e=arr.some(20);
+		let f=arr.reverse('f');
+		let arr1=new myArray(5,10,6,4,2,8,15,21);
+		let g=arr1.sortUp();
+		let arr2=new myArray(5,10,6,4,2,8,15,21);
+		let h =arr2.splicedelete(2,5);
+		let arr3=new myArray(2,5,4,5,1,4,8);
+		let i=arr3.map(function(value){
+			return value*2;
+		})
+		console.log(a);
+		console.log(b);
+		console.log(c);
+		console.log(d);
+		console.log(e);
+		console.log(f);
+		console.log(g);
+		console.log(h);
+		console.log(i);
+	</script>
+</body>
+</html>

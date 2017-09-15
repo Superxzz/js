@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <button onclick='document.write(iPhone7.size)'>124</button> -->
+	<script>
+		function iPhone(name,xinghao,size,tedian){
+			this.brand=name;
+			this.xinghao=xinghao;
+			this.size=size;
+			this.tedian=tedian;
+		}
+		let iPhone6 =new iPhone('iPhone6','ios4.5','5寸','haowan')
+		let iPhone7 =new iPhone('iPhone7','ios5.0','5.5寸','haowan+1')
+		console.log(iPhone6)
+		console.log(iPhone7)
+
+
+		let iPhone8plus ={
+			name : 'iPhone8 plus',
+			colo : 'red',
+			size : 5.5,
+			nihao: 'nihuai',
+			say : function(){
+				alert('你好')
+			}
+		}
+		iPhone8plus.say();
+		console.log(iPhone8plus);
+		console.log(iPhone8plus.nihao);
+
+		class Student{
+			constructor(){
+				this.name='zhangsan';
+			}
+			play(){
+				alert('玩耍啊')
+			}
+		}
+		let wangwu = new Student;
+		console.log(wangwu);
+		wangwu.play();
+	</script>
+</body>
+</html>
