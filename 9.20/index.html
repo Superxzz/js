@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图动画</title>
+	<script src="animate.js"></script>
+	<script src="base.js"></script>	
+</head>
+<style>
+	/*
+* @Author: Machenike
+* @Date:   2017-09-18 17:11:47
+* @Last Modified by:   Machenike
+* @Last Modified time: 2017-09-20 11:36:30
+*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+*{
+	font-family: sans-serif;
+	font-size: 14px;
+	color: #000;
+}
+a{
+	color: #000;
+	text-decoration: none;
+}
+main{
+	width: 1230px;
+	height: 500px;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+	position: relative;
+}
+.aside-box{
+	width: 200px;
+	height: 480px;
+	padding: 10px 0;
+	background: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.aside-box li{
+	width: 180px;
+	height: 30px;
+	padding: 0 10px;
+	line-height: 30px;
+}
+.aside-box li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+}
+.aside-box li a i{
+	margin-right: 10px;
+	color: #fff;
+}
+.aside-box li:hover{
+	background: #fff;
+}
+.aside-box li:hover a{
+	color: #ff6800;
+}
+.aside-box li:hover i{
+	color: #ff6800;
+}
+
+.aside-box .aside-r{
+	width: 500px;
+	height: 100%;
+	position: absolute;
+	left: 200px;
+	top: 0;
+	background: red;
+	display: none;
+}
+.banner-box{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.banner-box li{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 100%;
+}
+.banner-box li:first-child{
+	left: 0;
+}
+.yuan{
+	width: 160px;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+.yuan li{
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: #fff;
+	float: left;
+	margin-right: 10px;cursor: pointer;
+}
+.yuan li:first-child{
+	background: #000;
+}
+#left{
+	width: 30px;
+	height: 70px;
+	text-align: center;
+	line-height: 70px;
+	position: absolute;
+	left: 200px;
+	top: 50%;
+	margin-top: -35px;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	font-size: 30px;
+}
+#right{
+	width: 30px;
+	height: 70px;
+	text-align: center;
+	line-height: 70px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -35px;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	font-size: 30px;
+
+}
+.adv{
+	width: 300px;
+	height: 300px;
+	background: red;
+	font-size: 60px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 999;
+
+}
+</style>
+<body>
+	<div class="adv" >
+		广告
+	</div>
+	<main> 
+		<ul class="banner-box">
+			<li style="background: red"></li>
+			<li style="background: yellow"></li>
+			<li style="background: green"></li>
+			<li style="background: skyblue"></li>
+			<li style="background: orange"></li>
+			<li style="background: purple"></li>
+		</ul>
+		<a href="javacript:;" id="left"> < </a>
+		<a href="javacript:;" id="right">></a>
+		<ul class="yuan">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul class="aside-box">
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">1</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">2</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">3</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">4</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">5</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">6</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">7</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">8</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">9</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">10</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">11</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">12</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">13</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">14</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">15</div>
+			</li>
+			<li>
+				<a href=""><i>icon</i>女装/内衣</a>
+				<div class="aside-r">16</div>
+			</li>
+		</ul>
+	</main>
+<script>
+	window.onload=function(){
+		let main =document.getElementsByTagName('main')[0];
+		let bannerBox=$('.banner-box')[0];
+		let imgs=bannerBox.getElementsByTagName('li');
+		let w=parseInt(window.getComputedStyle(bannerBox,null).width);
+		let yuan=document.getElementsByClassName('yuan')[0];
+		let yuans=yuan.getElementsByTagName('li');
+		let left=$('#left');
+		let right=$('#right');
+		let flag=true;
+		let next=0;
+		let now=0;
+		let t ;
+		t =setInterval(move, 3000);
+		function move(){
+			next++;
+			if(next==imgs.length){
+				next=0;
+			}				
+			imgs[next].style.left= w+'px';
+			animate(imgs[now],{left:-w});
+			animate(imgs[next],{left:0},function(){
+				flag=true;
+			});
+			yuans[now].style.background='#fff';
+			yuans[next].style.background='#000';
+			now=next;
+		}
+		function moveL(){
+			next--;
+			if(next<0){
+				next=imgs.length-1;
+			}				
+			imgs[next].style.left= -w+'px';
+			animate(imgs[now],{left:w});
+			animate(imgs[next],{left:0},function(){
+				flag=true;
+			});
+			yuans[now].style.background='#fff';
+			yuans[next].style.background='#000';
+			now=next;
+		}
+		main.onmouseover=function(){
+			clearInterval(t);
+		}
+		main.onmouseout=function(){
+			t = setInterval(move, 3000);
+		}
+		right.onclick=function(){
+			if(!flag){
+				return
+			}
+			move();
+			flag=false;	
+		}
+		left.onclick=function(){
+			if(!flag){
+				return
+			}
+			moveL();
+			flag=false;	
+		}
+		for(let i=0;i<yuans.length;i++){
+			yuans[i].onclick=function(){
+				if(now==i){return}
+				if(!flag){return}	
+				yuans[now].style.background='#fff';
+				yuans[i].style.background='#000';
+				imgs[i].style.left=w+'px';
+				animate(imgs[now],{left:-w});
+				animate(imgs[i],{left:0},function(){flag=true});
+				now=next=i;
+				flag=false;
+			}
+		}
+
+		/*广告*/
+		let adv=document.getElementsByClassName('adv')[0];
+		let maxh=adv.offsetHeight;
+		let maxw=adv.offsetWidth;
+		let maxH=innerHeight-maxh-20;
+		let maxW=innerWidth-maxw-20;
+		let tops=adv.offsetTop;
+		let lefts=adv.offsetLeft;
+		let ts = setInterval(move,60);
+		let speed=10;
+		let speeds=10;
+		function move(){
+			tops+=speed;
+			lefts+=speeds;
+			if(tops>=maxH){
+				speed*=-1;
+			}
+			if(lefts>=maxW){
+				speeds*=-1;
+			}
+			if(tops<=0){
+				speed*=-1;
+			}
+			if(lefts<=0){
+				speeds*=-1;
+			}
+			adv.style.left=lefts+'px';
+			adv.style.top=tops+'px';
+		}
+	}
+</script>
+</body>
+</html>
